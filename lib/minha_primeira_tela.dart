@@ -1,10 +1,10 @@
 // import 'package:flutter/material.dart';
 
-// class ScaffoldWidget extends StatelessWidget {
-//   const ScaffoldWidget({super.key});
+// class MyScreenWidget extends StatelessWidget {
+//   const MyScreenWidget({super.key});
 
 //   @override
-//   Widget build(BuildContext build) {
+//   Widget build(BuildContext context) {
 //     return MaterialApp(
 //       theme: ThemeData(
 //         primarySwatch: 
