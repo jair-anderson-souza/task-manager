@@ -1,84 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:starter_name/task.dart';
-
-void main() {
-  runApp(const ScaffoldWidget());
-}
-
-class ScaffoldWidget extends StatefulWidget {
-  const ScaffoldWidget({super.key});
-
-  @override
-  State<ScaffoldWidget> createState() => _ScaffoldWidgetState();
-}
-
-class _ScaffoldWidgetState extends State<ScaffoldWidget> {
-  bool opacity = true;
-
-<<<<<<< HEAD
-=======
-  @override
->>>>>>> example
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'My first Scaffold',
-        theme: ThemeData(primarySwatch: Colors.blue),
-        home: Scaffold(
-            appBar: AppBar(
-              centerTitle: false,
-              leading: Container(),
-              title: const Text('Tarefas'),
-            ),
-            body: AnimatedOpacity(
-              opacity: opacity ? 1 : 0,
-<<<<<<< HEAD
-              duration: Duration(milliseconds: 800),
-              child: ListView(
-                children: [
-                  Task(
-                      'Aprender Flutter',
-                      'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
-                      3),
-                  Task(
-                      'Andar de Bike',
-                      'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
-                      2),
-                  Task(
-                      'Meditar',
-                      'https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/06/Top-5-Scientific-Findings-on-MeditationMindfulness-881x710.jpeg',
-                      5),
-                  Task(
-                      'Ler',
-                      'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
-                      2),
-                  Task(
-                      'Jogar',
-                      'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
-                      1),
-=======
-              duration: const Duration(milliseconds: 500),
-              child: ListView(
-                children: [
-                  Task('Aprender Flutter', 'assets/images/flutter.png', 3),
-                  Task('Andar de Bike', 'assets/images/bike.jpg', 2),
-                  Task('Meditar', 'assets/images/meditar.jpeg', 5),
-                  Task('Ler', 'assets/images/ler.jpeg', 2),
-                  Task('Jogar', 'assets/images/jogar.jpeg', 1),
-                  const SizedBox(height: 50)
->>>>>>> example
-                ],
-              ),
-            ),
-            floatingActionButton: FloatingActionButton(
-                onPressed: () {
-                  setState(() {
-                    opacity = !opacity;
-                  });
-                },
-<<<<<<< HEAD
-                child: Icon(Icons.remove_red_eye))));
-  }
-}
 
 class Task extends StatefulWidget {
   final String name;
@@ -124,7 +44,7 @@ class _TaskState extends State<Task> {
                   height: 100,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(4),
-                    child: Image.network(
+                    child: Image.asset(
                       widget.image,
                       fit: BoxFit.cover,
                     ),
@@ -134,10 +54,10 @@ class _TaskState extends State<Task> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
+                    SizedBox(
                         width: 200,
                         child: Text(widget.name,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 24,
                                 overflow: TextOverflow.ellipsis))),
                     Row(
@@ -171,7 +91,7 @@ class _TaskState extends State<Task> {
                     )
                   ],
                 ),
-                Container(
+                SizedBox(
                   width: 52,
                   height: 52,
                   child: ElevatedButton(
@@ -183,7 +103,7 @@ class _TaskState extends State<Task> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
+                      children: const [
                         Icon(Icons.arrow_drop_up),
                         Text(
                           'UP',
@@ -199,7 +119,7 @@ class _TaskState extends State<Task> {
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
               padding: const EdgeInsets.all(8),
-              child: Container(
+              child: SizedBox(
                 width: 200,
                 child: LinearProgressIndicator(
                   color: Colors.white,
@@ -213,15 +133,12 @@ class _TaskState extends State<Task> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 'Nível $nivel',
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: const TextStyle(color: Colors.white, fontSize: 16),
               ),
             )
           ])
         ])
       ]),
     );
-=======
-                child: const Icon(Icons.remove_red_eye))));
->>>>>>> example
   }
 }
